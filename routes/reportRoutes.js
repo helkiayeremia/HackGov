@@ -1,6 +1,7 @@
 const express = require('express');
 const reportController = require('../controllers/reportController');
 const authController = require('../controllers/authController');
+const firebaseController = require('../controllers/firebaseController');
 
 const router = express.Router();
 
@@ -15,6 +16,11 @@ router
 router
   .route('/')
   .get(reportController.getAllReports)
-  .post(reportController.setUserId, reportController.createReport);
+  .post(
+    firebaseController.imageUploader,
+    firebaseController.saveImage,
+    reportController.setUserId,
+    reportController.createReport
+  );
 
 module.exports = router;

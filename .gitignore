@@ -104,3 +104,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Firebase key
+hackgov-c8e4c-firebase-adminsdk-juai4-5a12fc78fd.json

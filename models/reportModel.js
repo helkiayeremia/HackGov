@@ -14,6 +14,10 @@ const reportSchema = mongoose.Schema(
       type: String,
       required: [true, 'Report must have a description']
     },
+    date: {
+      type: Date,
+      default: Date.now()
+    },
     location: {
       type: {
         type: String,
@@ -24,10 +28,6 @@ const reportSchema = mongoose.Schema(
         type: [Number],
         required: true
       }
-    },
-    date: {
-      type: Date,
-      default: Date.now()
     },
     user: {
       type: mongoose.Schema.ObjectId,
