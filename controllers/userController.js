@@ -5,7 +5,6 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
 exports.getAllReportsByUserId = catchAsync(async (req, res, next) => {
-  console.log('masuk');
   const doc = await Report.find({ user: req.user.id });
 
   if (!doc) {
